@@ -1,0 +1,86 @@
+/**
+@mainpage Dokumentacja zadania drogi
+
+### Treść zadania
+
+Uwaga: aktualna treść zadania znajduje się w [Moodle'u](https://moodle.mimuw.edu.pl).
+
+### Opis programu
+
+Tegoroczne duże zadanie polega na zaimplementowaniu operacji na mapach drogowych.
+
+Mapa dróg to zbiór miast połączonych odcinkami dróg.
+
+Miasto posiada informację o swojej nazwie, która jest niepustym napisem niezawierającym znaków 
+o kodach od 0 do 31 ani średnika i zakończonym znakiem zerowym.
+
+Odcinek drogi łączy ze sobą dwa miasta. Między dwoma miastami może być tylko jeden odcinek drogi.
+Odcinek drogi posiada informację o roku budowy lub ostatniego remontu oraz o długości. Długość
+jest dodatnią liczbą całkowitą. Rok budowy lub ostatniego remontu jest liczbą całkowitą, gdzie
+wartości dodatnie reprezentują lata naszej ery, a wartości ujemne lata przed naszą erą.
+Nie było roku 0.
+
+Droga krajowa jest drogą, czyli ciągiem odcinków drogowych łączących dwa miasta, bez przerw,
+samoprzecięć i pętli. Jeden odcinek drogi może należeć do wielu dróg krajowych. Droga krajowa
+posiada informację o swoim numerze, który jest liczbą całkowitą z przedziału od 1 do 999.
+Długość drogi krajowej to suma długości odcinków dróg, przez które przechodzi droga krajowa.
+
+Program posiada również interfejs tekstowy. Czyta ze standardowego wejścia, wyniki wypisuje
+na standardowe wyjście, a informacje o błędach na standardowe wyjście diagnostyczne.
+
+Program akceptuje następujące polecenia:
+
+1. Polecenie tworzące drogę krajową postaci:
+numer drogi krajowej;nazwa miasta;długość odcinka drogi;rok budowy lub ostatniego remontu;nazwa miasta;długość odcinka drogi;rok budowy lub ostatniego remontu;nazwa miasta;…;nazwa miasta
+To polecenie tworzy drogę krajową o podanym numerze oraz przebiegu. Jeśli jakiś odcinek drogi
+z polecenia nie istnieje, to program tworzy go. W przypadku, gdy dany odcinek drogi już istnieje,
+ale jego rok budowy lub ostatniego remontu jest wcześniejszy niż rok podanego odcinka,
+to modyfikuje go. Informacja o błędzie wypisywana jest wtedy, gdy podany odcinek drogi już istnieje,
+ale ma różną od podanej długość lub późniejszy rok budowy lub ostatniego remontu.
+To polecenie nic nie wypisuje na standardowe wyjście.
+
+2. Polecenie tworzące odcinek drogi postaci:
+addRoad;city1;city2;length;builtYear
+To polecenie wywołuje funkcję addRoad z podanymi parametrami.
+Polecenie nic nie wypisuje na standardowe wyjście.
+
+3. Polecenie reperujące odcinek drogi postaci:
+repairRoad;city1;city2;repairYear
+To polecenie wywołuje funkcję repairRoad z podanymi parametrami.
+Polecenie nic nie wypisuje na standardowe wyjście.
+
+4. Polecenie wypisujące opis drogi krajowej postaci:
+getRouteDescription;routeId
+To polecenie wywołuje funkcję getRouteDescription z podanymi parametrami.
+Jeśli wynik funkcji ma wartość różną od NULL, to wypisuje na standardowe wyjście jedną linię
+z wynikiem działania tej funkcji.
+
+5. Polecenie tworzące drogę krajową postaci:
+newRoute;routeId;city1;city2
+To polecenie wywołuje funkcję newRoute z podanymi parametrami.
+Polecenie nic nie wypisuje na standardowe wyjście.
+
+6. Polecenie wydłużające drogę krajową postaci:
+extendRoute;routeId;city
+To polecenie wywołuje funkcję extendRoute z podanymi parametrami.
+Polecenie nic nie wypisuje na standardowe wyjście.
+
+7. Polecenie usuwające odcinek drogi postaci:
+removeRoad;city1;city2
+To polecenie wywołuje funkcję removeRoad z podanymi parametrami.
+Polecenie nic nie wypisuje na standardowe wyjście.
+
+8. Polecenie usuwające drogę krajową postaci:
+removeRoute;routeId
+To polecenie wywołuje funkcję removeRoute z podanymi parametrami.
+Polecenie nic nie wypisuje na standardowe wyjście.
+
+Program pomija puste linie oraz linie których pierwszym znakiem jest znak '#'.
+
+Jeśli polecenie jest niepoprawne lub jego wykonanie zakończyło się błędem to wypisuje na standardowe
+wyjście diagnostyczne informację o błędzie postaci:
+ERROR n
+gdzie n jest numerem linii w danych wejściowych zawierającym to polecenie.
+Linie numerowane są od jedynki.
+
+*/
